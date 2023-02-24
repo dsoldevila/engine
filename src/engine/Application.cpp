@@ -1,7 +1,7 @@
 #include "Application.h"
 
-#include <iostream>
-#include <unistd.h>
+#include "spdlog/spdlog.h"
+#include "unistd.h"
 
 namespace Engine{
 
@@ -17,7 +17,7 @@ namespace Engine{
 
     void Application::Run(){
         while(true){
-            std::cout << "Default Application running" << std::endl;
+            spdlog::info("Default Application running");
             sleep(1);
         }
     }

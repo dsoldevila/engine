@@ -10,8 +10,12 @@ include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++20" COMPILER_SUPPORTS_CXX20)
 SET(CMAKE_CXX_STANDARD 20)
 
+
+find_package(spdlog REQUIRED)
+
 add_library(engine src/engine/Application.cpp)
 target_include_directories(engine PRIVATE src/engine)
+target_link_libraries(engine PRIVATE spdlog::spdlog)
 
 
 add_executable(test test/test.cpp)
