@@ -28,5 +28,5 @@ add_subdirectory(src/engine)
 
 
 add_executable(test test/test.cpp)
-target_link_libraries(test engine)
+target_link_libraries(test PRIVATE engine)
 target_include_directories(test PRIVATE src)
